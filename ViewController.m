@@ -90,7 +90,6 @@ typedef NS_ENUM(NSInteger,ViewColor) {
     [btn4 setTitle:@"改变位置" forState:(UIControlStateNormal)];
     [btn4 setBackgroundImage:[UIImage imageNamed:@"1.png"] forState:UIControlStateNormal];
     [btn4 addTarget:self action:@selector(clickToChangePosition) forControlEvents:UIControlEventTouchUpInside];
-//    [btn3 addTarget:self action:@selector(clickChangeToGreen) forControlEvents:UIControlEventTouchUpInside];
     //设置button的size，sizeToFit的作用是自动计算出btn的最优大小并进行设置
     [self.view addSubview:btn4];
     // Do any additional setup after loading the view.
@@ -102,9 +101,7 @@ typedef NS_ENUM(NSInteger,ViewColor) {
 //    mySlider.continuous = NO;
     [mySlider addTarget:self action:@selector(sliderChanged)forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:mySlider];
-    
-//    self.bgcolor = ViewColorRed;
-}
+    }
 
 - (UIView *)colorView
 {
@@ -149,7 +146,7 @@ typedef NS_ENUM(NSInteger,ViewColor) {
     return _bgcolor;
 }
 
-- (void)eclickChangeToRed{
+- (void)clickChangeToRed{
     NSLog(@"点击了btn1,变红色");
     self.view.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:0.8];
     NSLog(@"color %@",self.view.backgroundColor);
@@ -186,29 +183,6 @@ typedef NS_ENUM(NSInteger,ViewColor) {
         NSLog(@"点击了btn3,变黄色");
     }
     
-//    self.view.backgroundColor = [UIColor colorWithRed:0.0/255.0 green:255.0/255.0 blue:0.0/255.0 alpha:0.8];
-//    UIColor *viewColor = [UIColor redColor];
-//      如何设置颜色
-
-    
-    
-    
-//    if (viewColor == [UIColor yellowColor])
-//    {
-//        self.colorView.backgroundColor = [UIColor blueColor];
-//        NSLog(@"点击了btn3,变蓝色");
-//    }
-//    else if (viewColor == [UIColor blueColor])
-//    {
-//        self.colorView.backgroundColor = [UIColor redColor];
-//        NSLog(@"点击了btn3,变红色");
-//    }
-//    else if (viewColor == [UIColor redColor])
-//    {
-//      self.colorView.backgroundColor = [UIColor yellowColor];
-//        NSLog(@"点击了btn3,变黄色");
-//    }
-
 }
 
 -  (void)clickToChangePosition
