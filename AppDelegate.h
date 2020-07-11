@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "Dog.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+//@property(nonatomic, strong) Dog *mymymymymydog;
+@property(nonatomic, strong) AppDelegate *app;
 
 @end
 
