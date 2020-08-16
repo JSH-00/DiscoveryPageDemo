@@ -32,6 +32,8 @@
     [self.scrollView1 addSubview:self.imageView];
     [self setZoomScale];
     
+    ///DEF
+    
     // 双击
     UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
     doubleTap.numberOfTapsRequired = 4;
