@@ -1,5 +1,5 @@
 //
-//  SceneDelegate.h
+//  SHNewViewController.h
 //  NetImage
 //
 //  Created by JSH on 2020/8/16.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
-@property (strong, nonatomic) UIWindow * window;
+@interface SHNewViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783441F24E8ED4D0066EC6B /* AppDelegate.m */; };
-		5783442324E8ED4D0066EC6B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783442224E8ED4D0066EC6B /* SceneDelegate.m */; };
 		5783442624E8ED4D0066EC6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783442524E8ED4D0066EC6B /* ViewController.m */; };
 		5783442924E8ED4D0066EC6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5783442724E8ED4D0066EC6B /* Main.storyboard */; };
 		5783442B24E8ED500066EC6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5783442A24E8ED500066EC6B /* Assets.xcassets */; };
@@ -16,6 +15,8 @@
 		5783443124E8ED500066EC6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783443024E8ED500066EC6B /* main.m */; };
 		5783443B24E8ED500066EC6B /* NetImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783443A24E8ED500066EC6B /* NetImageTests.m */; };
 		5783444624E8ED500066EC6B /* NetImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783444524E8ED500066EC6B /* NetImageUITests.m */; };
+		5783445424E8ED760066EC6B /* sv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5783445324E8ED760066EC6B /* sv.png */; };
+		57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F3CE9224E96E1E0008F355 /* SHNewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +40,6 @@
 		5783441B24E8ED4D0066EC6B /* NetImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5783441E24E8ED4D0066EC6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5783441F24E8ED4D0066EC6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5783442124E8ED4D0066EC6B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		5783442224E8ED4D0066EC6B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		5783442424E8ED4D0066EC6B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5783442524E8ED4D0066EC6B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5783442824E8ED4D0066EC6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,9 @@
 		5783444124E8ED500066EC6B /* NetImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5783444524E8ED500066EC6B /* NetImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetImageUITests.m; sourceTree = "<group>"; };
 		5783444724E8ED500066EC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5783445324E8ED760066EC6B /* sv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sv.png; sourceTree = "<group>"; };
+		57F3CE9124E96E1E0008F355 /* SHNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHNewViewController.h; sourceTree = "<group>"; };
+		57F3CE9224E96E1E0008F355 /* SHNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHNewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,15 +108,16 @@
 			children = (
 				5783441E24E8ED4D0066EC6B /* AppDelegate.h */,
 				5783441F24E8ED4D0066EC6B /* AppDelegate.m */,
-				5783442124E8ED4D0066EC6B /* SceneDelegate.h */,
-				5783442224E8ED4D0066EC6B /* SceneDelegate.m */,
 				5783442424E8ED4D0066EC6B /* ViewController.h */,
 				5783442524E8ED4D0066EC6B /* ViewController.m */,
 				5783442724E8ED4D0066EC6B /* Main.storyboard */,
 				5783442A24E8ED500066EC6B /* Assets.xcassets */,
+				5783445324E8ED760066EC6B /* sv.png */,
 				5783442C24E8ED500066EC6B /* LaunchScreen.storyboard */,
 				5783442F24E8ED500066EC6B /* Info.plist */,
 				5783443024E8ED500066EC6B /* main.m */,
+				57F3CE9124E96E1E0008F355 /* SHNewViewController.h */,
+				57F3CE9224E96E1E0008F355 /* SHNewViewController.m */,
 			);
 			path = NetImage;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			files = (
 				5783442E24E8ED500066EC6B /* LaunchScreen.storyboard in Resources */,
 				5783442B24E8ED500066EC6B /* Assets.xcassets in Resources */,
+				5783445424E8ED760066EC6B /* sv.png in Resources */,
 				5783442924E8ED4D0066EC6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,10 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */,
 				5783442624E8ED4D0066EC6B /* ViewController.m in Sources */,
 				5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */,
 				5783443124E8ED500066EC6B /* main.m in Sources */,
-				5783442324E8ED4D0066EC6B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +379,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -427,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -440,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
 				INFOPLIST_FILE = NetImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
 				INFOPLIST_FILE = NetImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
