@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5774B17024EBCAD600808693 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5774B16F24EBCAD600808693 /* PageViewController.m */; };
 		5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783441F24E8ED4D0066EC6B /* AppDelegate.m */; };
 		5783442624E8ED4D0066EC6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783442524E8ED4D0066EC6B /* ViewController.m */; };
 		5783442924E8ED4D0066EC6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5783442724E8ED4D0066EC6B /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5774B16E24EBCAD600808693 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
+		5774B16F24EBCAD600808693 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		5783441B24E8ED4D0066EC6B /* NetImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5783441E24E8ED4D0066EC6B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5783441F24E8ED4D0066EC6B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				5783443024E8ED500066EC6B /* main.m */,
 				57F3CE9124E96E1E0008F355 /* SHNewViewController.h */,
 				57F3CE9224E96E1E0008F355 /* SHNewViewController.m */,
+				5774B16E24EBCAD600808693 /* PageViewController.h */,
+				5774B16F24EBCAD600808693 /* PageViewController.m */,
 			);
 			path = NetImage;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */,
 				5783442624E8ED4D0066EC6B /* ViewController.m in Sources */,
 				5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */,
+				5774B17024EBCAD600808693 /* PageViewController.m in Sources */,
 				5783443124E8ED500066EC6B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "SHNewViewController.h"
+#import "PageViewController.h"
 
 @interface AppDelegate ()
 
@@ -25,10 +26,13 @@
     ViewController *vc1 = [[ViewController alloc] init];
     
     
-    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc1];
-    
     
     SHNewViewController *vc2 = [SHNewViewController new];
+    PageViewController *vc3 = [PageViewController new];
+    
+    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc1];
+    
+//    UINavigationController *vc_to_pg = [[UINavigationController alloc]initWithRootViewController:vc2];
     
     self.window.rootViewController = vc1_NA;
     [self.window makeKeyAndVisible];

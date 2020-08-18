@@ -131,7 +131,7 @@
         // 视图大于最小视图时 双击将视图缩小至最小
         [self.scrollView1 setZoomScale:self.scrollView1.minimumZoomScale animated:YES];
     }
-    else
+    else // 以双击点放大视图
     {
         /*
          // 视图为最小时 双击将视图放大至最大
@@ -149,14 +149,15 @@
 
 - (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView withScale:(CGFloat)scale withCenter:(CGPoint)center {
     // 3.声明一个区域 滚动视图的宽除以放大倍数可以得到要显示imageView宽度
+    
+    //touchPoint为放大后的center
     CGRect zoomRect;
-    zoomRect.size.width = CGRectGetWidth(scrollView.frame) / scale;
+    zoomRect.size.width = CGRectGetWidth(scrollView.frame) / scale;  // 把zoomRect的比例放大，放大为 1 / scale
     zoomRect.size.height = CGRectGetHeight(scrollView.frame) / scale;
     
-    // 4.点击位置x坐标减去1/2图像宽度，可以得到要显示imageView的原点x坐标 y坐标类似
-    zoomRect.origin.x = center.x - zoomRect.size.width / 2;
+    // 4.点击位置（center）坐标减去1/2图像宽/高度，可以得到要显示imageView的原点x、y坐标
+    zoomRect.origin.x = center.x - zoomRect.size.width / 2;  //确定zoomRect坐标
     zoomRect.origin.y = center.y - zoomRect.size.height / 2;
-    
     return zoomRect;
 }
 @end

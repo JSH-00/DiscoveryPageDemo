@@ -7,7 +7,7 @@
 //
 
 #import "SHNewViewController.h"
-
+#import "PageViewController.h"
 @interface SHNewViewController ()
 
 @end
@@ -20,8 +20,20 @@
     self.navigationController.navigationBarHidden = false;
     
     // Do any additional setup after loading the view.
+    
+    //button
+    UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
+      [button setBackgroundColor:[UIColor redColor]];
+      [self.view addSubview:button];
+      [button addTarget:self action:@selector(nextVc) forControlEvents:UIControlEventTouchUpInside];
+      [button setFrame:CGRectMake(60, 60, 100, 100)];
 }
-
+- (void)nextVc{
+    PageViewController *newVc = [PageViewController new];
+    [self.navigationController pushViewController:newVc animated:true];
+    
+   // [self presentViewController:newVc animated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 
