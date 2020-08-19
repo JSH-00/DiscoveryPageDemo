@@ -1,0 +1,6 @@
+framework module Pods_NetImageTests {
+  umbrella header "Pods-NetImageTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

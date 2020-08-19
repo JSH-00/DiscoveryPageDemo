@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4668302058C7CC7BC787AF72 /* Pods_NetImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1826F2040DADC2C54C9068E /* Pods_NetImage.framework */; };
 		5774B17024EBCAD600808693 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5774B16F24EBCAD600808693 /* PageViewController.m */; };
 		5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783441F24E8ED4D0066EC6B /* AppDelegate.m */; };
 		5783442624E8ED4D0066EC6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783442524E8ED4D0066EC6B /* ViewController.m */; };
@@ -18,6 +19,8 @@
 		5783444624E8ED500066EC6B /* NetImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783444524E8ED500066EC6B /* NetImageUITests.m */; };
 		5783445424E8ED760066EC6B /* sv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5783445324E8ED760066EC6B /* sv.png */; };
 		57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F3CE9224E96E1E0008F355 /* SHNewViewController.m */; };
+		894D699556CE905483396139 /* Pods_NetImage_NetImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7329E29DBEFFE78CDC3A3 /* Pods_NetImage_NetImageUITests.framework */; };
+		CCF7CFDC19FDED86348B8845 /* Pods_NetImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3964EEE737FB3319557204 /* Pods_NetImageTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImageTests.debug.xcconfig"; path = "Target Support Files/Pods-NetImageTests/Pods-NetImageTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5774B16E24EBCAD600808693 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		5774B16F24EBCAD600808693 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		5783441B24E8ED4D0066EC6B /* NetImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,14 @@
 		5783445324E8ED760066EC6B /* sv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sv.png; sourceTree = "<group>"; };
 		57F3CE9124E96E1E0008F355 /* SHNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHNewViewController.h; sourceTree = "<group>"; };
 		57F3CE9224E96E1E0008F355 /* SHNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHNewViewController.m; sourceTree = "<group>"; };
+		5811D82BC20CDE4EDCE74C5E /* Pods-NetImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImage.debug.xcconfig"; path = "Target Support Files/Pods-NetImage/Pods-NetImage.debug.xcconfig"; sourceTree = "<group>"; };
+		5F3964EEE737FB3319557204 /* Pods_NetImageTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetImageTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		699C1C434EF977D5CF8A0C3E /* Pods-NetImageTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImageTests.release.xcconfig"; path = "Target Support Files/Pods-NetImageTests/Pods-NetImageTests.release.xcconfig"; sourceTree = "<group>"; };
+		6DA7329E29DBEFFE78CDC3A3 /* Pods_NetImage_NetImageUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetImage_NetImageUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722CFDD12C841B076597EA37 /* Pods-NetImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImage.release.xcconfig"; path = "Target Support Files/Pods-NetImage/Pods-NetImage.release.xcconfig"; sourceTree = "<group>"; };
+		75A290202CA8644755E02B9A /* Pods-NetImage-NetImageUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImage-NetImageUITests.debug.xcconfig"; path = "Target Support Files/Pods-NetImage-NetImageUITests/Pods-NetImage-NetImageUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1826F2040DADC2C54C9068E /* Pods_NetImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFDD80794A4CA79C791197D1 /* Pods-NetImage-NetImageUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImage-NetImageUITests.release.xcconfig"; path = "Target Support Files/Pods-NetImage-NetImageUITests/Pods-NetImage-NetImageUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4668302058C7CC7BC787AF72 /* Pods_NetImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF7CFDC19FDED86348B8845 /* Pods_NetImageTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				894D699556CE905483396139 /* Pods_NetImage_NetImageUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A7D47DA7354E0604EE68FE0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5811D82BC20CDE4EDCE74C5E /* Pods-NetImage.debug.xcconfig */,
+				722CFDD12C841B076597EA37 /* Pods-NetImage.release.xcconfig */,
+				75A290202CA8644755E02B9A /* Pods-NetImage-NetImageUITests.debug.xcconfig */,
+				FFDD80794A4CA79C791197D1 /* Pods-NetImage-NetImageUITests.release.xcconfig */,
+				065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */,
+				699C1C434EF977D5CF8A0C3E /* Pods-NetImageTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5783441224E8ED4D0066EC6B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +122,8 @@
 				5783443924E8ED500066EC6B /* NetImageTests */,
 				5783444424E8ED500066EC6B /* NetImageUITests */,
 				5783441C24E8ED4D0066EC6B /* Products */,
+				4A7D47DA7354E0604EE68FE0 /* Pods */,
+				C7326F4D6612526B5892426A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +176,16 @@
 			path = NetImageUITests;
 			sourceTree = "<group>";
 		};
+		C7326F4D6612526B5892426A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1826F2040DADC2C54C9068E /* Pods_NetImage.framework */,
+				6DA7329E29DBEFFE78CDC3A3 /* Pods_NetImage_NetImageUITests.framework */,
+				5F3964EEE737FB3319557204 /* Pods_NetImageTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5783444A24E8ED500066EC6B /* Build configuration list for PBXNativeTarget "NetImage" */;
 			buildPhases = (
+				C0FE53FF512AE3FD580E9802 /* [CP] Check Pods Manifest.lock */,
 				5783441724E8ED4D0066EC6B /* Sources */,
 				5783441824E8ED4D0066EC6B /* Frameworks */,
 				5783441924E8ED4D0066EC6B /* Resources */,
@@ -169,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5783444D24E8ED500066EC6B /* Build configuration list for PBXNativeTarget "NetImageTests" */;
 			buildPhases = (
+				2134A8D70136F45490116C12 /* [CP] Check Pods Manifest.lock */,
 				5783443224E8ED500066EC6B /* Sources */,
 				5783443324E8ED500066EC6B /* Frameworks */,
 				5783443424E8ED500066EC6B /* Resources */,
+				ABDD83A3B82812FFA76B5586 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +231,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5783445024E8ED500066EC6B /* Build configuration list for PBXNativeTarget "NetImageUITests" */;
 			buildPhases = (
+				9272D4FC631CDCFCD7844466 /* [CP] Check Pods Manifest.lock */,
 				5783443D24E8ED500066EC6B /* Sources */,
 				5783443E24E8ED500066EC6B /* Frameworks */,
 				5783443F24E8ED500066EC6B /* Resources */,
@@ -270,6 +315,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2134A8D70136F45490116C12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetImageTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9272D4FC631CDCFCD7844466 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetImage-NetImageUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABDD83A3B82812FFA76B5586 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0FE53FF512AE3FD580E9802 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NetImage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5783441724E8ED4D0066EC6B /* Sources */ = {
@@ -447,6 +578,7 @@
 		};
 		5783444B24E8ED500066EC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5811D82BC20CDE4EDCE74C5E /* Pods-NetImage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +597,7 @@
 		};
 		5783444C24E8ED500066EC6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 722CFDD12C841B076597EA37 /* Pods-NetImage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -483,6 +616,7 @@
 		};
 		5783444E24E8ED500066EC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +637,7 @@
 		};
 		5783444F24E8ED500066EC6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 699C1C434EF977D5CF8A0C3E /* Pods-NetImageTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +658,7 @@
 		};
 		5783445124E8ED500066EC6B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75A290202CA8644755E02B9A /* Pods-NetImage-NetImageUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
@@ -541,6 +677,7 @@
 		};
 		5783445224E8ED500066EC6B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFDD80794A4CA79C791197D1 /* Pods-NetImage-NetImageUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
