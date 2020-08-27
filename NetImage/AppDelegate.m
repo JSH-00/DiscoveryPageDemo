@@ -10,6 +10,9 @@
 #import "ViewController.h"
 #import "SHNewViewController.h"
 #import "PageViewController.h"
+#import "TableViewController.h"
+#import "DetailViewController.h"
+#import "SDWebImageViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,14 +26,17 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    ViewController *vc1 = [[ViewController alloc] init];
+//    ViewController *vc1 = [[ViewController alloc] init];
+//    
+//    
+//    
+//    SHNewViewController *vc2 = [SHNewViewController new];
+//    PageViewController *vc3 = [PageViewController new];
+    TableViewController *vc4 = [TableViewController new];
+    DetailViewController *vc5 = [DetailViewController new];
+    SDWebImageViewController *vc6 = [SDWebImageViewController new];
     
-    
-    
-    SHNewViewController *vc2 = [SHNewViewController new];
-    PageViewController *vc3 = [PageViewController new];
-    
-    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc1];
+    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc4];
     
 //    UINavigationController *vc_to_pg = [[UINavigationController alloc]initWithRootViewController:vc2];
     

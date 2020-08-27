@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4668302058C7CC7BC787AF72 /* Pods_NetImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1826F2040DADC2C54C9068E /* Pods_NetImage.framework */; };
+		575C317524F4D52400922BC4 /* SDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575C317424F4D52400922BC4 /* SDWebImageViewController.m */; };
+		576E4CC124F6338E00AA3C0D /* GIF_two.gif in Resources */ = {isa = PBXBuildFile; fileRef = 576E4CC024F6338E00AA3C0D /* GIF_two.gif */; };
 		5774B17024EBCAD600808693 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5774B16F24EBCAD600808693 /* PageViewController.m */; };
 		5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783441F24E8ED4D0066EC6B /* AppDelegate.m */; };
 		5783442624E8ED4D0066EC6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783442524E8ED4D0066EC6B /* ViewController.m */; };
@@ -18,6 +20,11 @@
 		5783443B24E8ED500066EC6B /* NetImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783443A24E8ED500066EC6B /* NetImageTests.m */; };
 		5783444624E8ED500066EC6B /* NetImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5783444524E8ED500066EC6B /* NetImageUITests.m */; };
 		5783445424E8ED760066EC6B /* sv.png in Resources */ = {isa = PBXBuildFile; fileRef = 5783445324E8ED760066EC6B /* sv.png */; };
+		5786927D24F35BCB00DDB2E4 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786927C24F35BCB00DDB2E4 /* TableViewController.m */; };
+		5786928024F35C6000DDB2E4 /* MyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786927F24F35C6000DDB2E4 /* MyData.m */; };
+		5786928324F35C7200DDB2E4 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786928224F35C7200DDB2E4 /* Student.m */; };
+		5786928C24F38D0500DDB2E4 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786928B24F38D0500DDB2E4 /* MyTableViewCell.m */; };
+		5786928F24F3E0DE00DDB2E4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5786928E24F3E0DE00DDB2E4 /* DetailViewController.m */; };
 		57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F3CE9224E96E1E0008F355 /* SHNewViewController.m */; };
 		894D699556CE905483396139 /* Pods_NetImage_NetImageUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA7329E29DBEFFE78CDC3A3 /* Pods_NetImage_NetImageUITests.framework */; };
 		CCF7CFDC19FDED86348B8845 /* Pods_NetImageTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3964EEE737FB3319557204 /* Pods_NetImageTests.framework */; };
@@ -42,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImageTests.debug.xcconfig"; path = "Target Support Files/Pods-NetImageTests/Pods-NetImageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		575C317324F4D52400922BC4 /* SDWebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDWebImageViewController.h; sourceTree = "<group>"; };
+		575C317424F4D52400922BC4 /* SDWebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDWebImageViewController.m; sourceTree = "<group>"; };
+		576E4CC024F6338E00AA3C0D /* GIF_two.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GIF_two.gif; sourceTree = "<group>"; };
 		5774B16E24EBCAD600808693 /* PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		5774B16F24EBCAD600808693 /* PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
 		5783441B24E8ED4D0066EC6B /* NetImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +71,16 @@
 		5783444524E8ED500066EC6B /* NetImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetImageUITests.m; sourceTree = "<group>"; };
 		5783444724E8ED500066EC6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5783445324E8ED760066EC6B /* sv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sv.png; sourceTree = "<group>"; };
+		5786927B24F35BCB00DDB2E4 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		5786927C24F35BCB00DDB2E4 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		5786927E24F35C6000DDB2E4 /* MyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyData.h; sourceTree = "<group>"; };
+		5786927F24F35C6000DDB2E4 /* MyData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyData.m; sourceTree = "<group>"; };
+		5786928124F35C7200DDB2E4 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		5786928224F35C7200DDB2E4 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		5786928A24F38D0500DDB2E4 /* MyTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		5786928B24F38D0500DDB2E4 /* MyTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		5786928D24F3E0DE00DDB2E4 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5786928E24F3E0DE00DDB2E4 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		57F3CE9124E96E1E0008F355 /* SHNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHNewViewController.h; sourceTree = "<group>"; };
 		57F3CE9224E96E1E0008F355 /* SHNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHNewViewController.m; sourceTree = "<group>"; };
 		5811D82BC20CDE4EDCE74C5E /* Pods-NetImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImage.debug.xcconfig"; path = "Target Support Files/Pods-NetImage/Pods-NetImage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,7 +131,6 @@
 				065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */,
 				699C1C434EF977D5CF8A0C3E /* Pods-NetImageTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +159,7 @@
 		5783441D24E8ED4D0066EC6B /* NetImage */ = {
 			isa = PBXGroup;
 			children = (
+				576E4CC024F6338E00AA3C0D /* GIF_two.gif */,
 				5783441E24E8ED4D0066EC6B /* AppDelegate.h */,
 				5783441F24E8ED4D0066EC6B /* AppDelegate.m */,
 				5783442424E8ED4D0066EC6B /* ViewController.h */,
@@ -154,6 +174,18 @@
 				57F3CE9224E96E1E0008F355 /* SHNewViewController.m */,
 				5774B16E24EBCAD600808693 /* PageViewController.h */,
 				5774B16F24EBCAD600808693 /* PageViewController.m */,
+				5786927B24F35BCB00DDB2E4 /* TableViewController.h */,
+				5786927C24F35BCB00DDB2E4 /* TableViewController.m */,
+				5786927E24F35C6000DDB2E4 /* MyData.h */,
+				5786927F24F35C6000DDB2E4 /* MyData.m */,
+				5786928124F35C7200DDB2E4 /* Student.h */,
+				5786928224F35C7200DDB2E4 /* Student.m */,
+				5786928A24F38D0500DDB2E4 /* MyTableViewCell.h */,
+				5786928B24F38D0500DDB2E4 /* MyTableViewCell.m */,
+				5786928D24F3E0DE00DDB2E4 /* DetailViewController.h */,
+				5786928E24F3E0DE00DDB2E4 /* DetailViewController.m */,
+				575C317324F4D52400922BC4 /* SDWebImageViewController.h */,
+				575C317424F4D52400922BC4 /* SDWebImageViewController.m */,
 			);
 			path = NetImage;
 			sourceTree = "<group>";
@@ -197,6 +229,7 @@
 				5783441724E8ED4D0066EC6B /* Sources */,
 				5783441824E8ED4D0066EC6B /* Frameworks */,
 				5783441924E8ED4D0066EC6B /* Resources */,
+				8B80913838D7059CCA3466E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,7 +248,6 @@
 				5783443224E8ED500066EC6B /* Sources */,
 				5783443324E8ED500066EC6B /* Frameworks */,
 				5783443424E8ED500066EC6B /* Resources */,
-				ABDD83A3B82812FFA76B5586 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +267,7 @@
 				5783443D24E8ED500066EC6B /* Sources */,
 				5783443E24E8ED500066EC6B /* Frameworks */,
 				5783443F24E8ED500066EC6B /* Resources */,
+				B031E6E993A4E604332F4187 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +329,7 @@
 				5783442E24E8ED500066EC6B /* LaunchScreen.storyboard in Resources */,
 				5783442B24E8ED500066EC6B /* Assets.xcassets in Resources */,
 				5783445424E8ED760066EC6B /* sv.png in Resources */,
+				576E4CC124F6338E00AA3C0D /* GIF_two.gif in Resources */,
 				5783442924E8ED4D0066EC6B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +373,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8B80913838D7059CCA3466E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetImage/Pods-NetImage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NetImage/Pods-NetImage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetImage/Pods-NetImage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9272D4FC631CDCFCD7844466 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -361,21 +412,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABDD83A3B82812FFA76B5586 /* [CP] Embed Pods Frameworks */ = {
+		B031E6E993A4E604332F4187 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NetImage-NetImageUITests/Pods-NetImage-NetImageUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-NetImage-NetImageUITests/Pods-NetImage-NetImageUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetImageTests/Pods-NetImageTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NetImage-NetImageUITests/Pods-NetImage-NetImageUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C0FE53FF512AE3FD580E9802 /* [CP] Check Pods Manifest.lock */ = {
@@ -410,8 +461,14 @@
 				57F3CE9324E96E1E0008F355 /* SHNewViewController.m in Sources */,
 				5783442624E8ED4D0066EC6B /* ViewController.m in Sources */,
 				5783442024E8ED4D0066EC6B /* AppDelegate.m in Sources */,
+				5786928C24F38D0500DDB2E4 /* MyTableViewCell.m in Sources */,
+				5786928024F35C6000DDB2E4 /* MyData.m in Sources */,
+				5786928F24F3E0DE00DDB2E4 /* DetailViewController.m in Sources */,
 				5774B17024EBCAD600808693 /* PageViewController.m in Sources */,
+				5786927D24F35BCB00DDB2E4 /* TableViewController.m in Sources */,
 				5783443124E8ED500066EC6B /* main.m in Sources */,
+				5786928324F35C7200DDB2E4 /* Student.m in Sources */,
+				575C317524F4D52400922BC4 /* SDWebImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +641,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = NetImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,6 +661,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = NetImage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -662,6 +721,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = NetImageUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -681,6 +741,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7DR2LJWWJ;
+				HEADER_SEARCH_PATHS = "\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"";
 				INFOPLIST_FILE = NetImageUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
