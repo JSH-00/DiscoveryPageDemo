@@ -7,48 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "146DF3BA-43FB-4D2D-B806-13DAB84F793F"
+            uuid = "05333B9C-BEC1-4817-B8EE-139314387A1B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetImage/MyTableViewCell.m"
+            filePath = "NetImage/DetailViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-config:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0434C89A-B647-4B56-95FD-D5CA3A8266E4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetImage/TableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF5C927E-0E94-49A5-B81F-8B596AC31496"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetImage/TableViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

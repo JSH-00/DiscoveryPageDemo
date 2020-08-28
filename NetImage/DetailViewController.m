@@ -42,12 +42,12 @@
     // 多行显示
     descLabel.numberOfLines=0;
     descLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    [bookImageView sd_setImageWithURL:[NSURL URLWithString:_stu.imageURL]
-                            placeholderImage:[UIImage imageNamed:@"small_one.png"]];
+    [bookImageView sd_setImageWithURL:[NSURL URLWithString:_stu.thumbnail]
+                            placeholderImage:[UIImage imageNamed:@"small_two.png"]];
 //    bookImageView.image = _stu.studentImage;
-    nameLabel.text = _stu.studentName;
-    prcieLabel.text = _stu.studentID;
-    descLabel.text = _stu.studentAddress;
+    nameLabel.text = _stu.author;
+    prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",_stu.create_time]];
+    descLabel.text = [NSString stringWithFormat:@"width: %@",_stu.width];
 
 }
 
@@ -55,14 +55,14 @@
     _stu = student;
 }
 
-/*
-#pragma mark - Navigation
+//字符串转时间戳 如：2017-4-10 17:15:10
+- (NSString *)transToTime:(NSString *)timeStamp{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:ss"];
+    NSTimeInterval time =[timeStamp doubleValue];
+    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time/1000.0];
+    return [formatter stringFromDate:detaildate];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end

@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DetailViewController : UIViewController
 @property (nonatomic, strong) Student * stu;
 - (void)setSelectedStudent:(Student *)student;
+- (NSString *)transToTime;
 @end
 
 NS_ASSUME_NONNULL_END

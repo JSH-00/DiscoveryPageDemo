@@ -57,9 +57,19 @@
     
     
     self.nameLabel.text = model.author;
-    self.prcieLabel.text = model.duration;
-    self.descLabel.text = model.create_time;
+    self.prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",model.create_time]];
+    self.descLabel.text = model.type;
     NSLog(@"");
+
+}
+
+//字符串转时间戳 如：2017-4-10 17:15:10
+- (NSString *)transToTime:(NSString *)timeStamp{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:ss"];
+    NSTimeInterval time =[timeStamp doubleValue];
+    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time/1000.0];
+    return [formatter stringFromDate:detaildate];
 
 }
 

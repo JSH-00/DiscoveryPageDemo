@@ -13,6 +13,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableViewCell : UITableViewCell
+-(NSString *)getTimeStrWithString;
+-(NSString *)UTCchangeDate;
+- (NSString *)transToTime;
 //@property (nonatomic, weak) UILabel * titleLable;
 //@property (nonatomic, weak) UILabel * addressLable;
 
