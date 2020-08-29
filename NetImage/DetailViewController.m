@@ -69,7 +69,6 @@
     NSTimeInterval time =[timeStamp doubleValue];
     NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time/1000.0];
     return [formatter stringFromDate:detaildate];
-
 }
 
 - (void)backVc

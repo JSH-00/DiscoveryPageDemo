@@ -36,24 +36,20 @@
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
-   [ super viewWillDisappear:animated];
+    [ super viewWillDisappear:animated];
     NSLog(@">>>>>>>>viewWillDisappear:%s",__func__);
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    NSLog(@"?>>>>>>>>>viewDidDisappear:%s",__func__);
+    NSLog(@">>>>>>>>>viewDidDisappear:%s",__func__);
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@">>>>>>>>viewDidLoad" );
-    // Do any additional setup after loading the view.
-    //    MyData *my_Data = [MyData new];
-    //    self.myData = [my_Data getStudentList]; // 获取
     [self reloadStudentList];
-    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent; // 更改电池栏颜色
+    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar\
     
     UIView *top_view = [[UIView alloc] init];
     self.topView = top_view;
@@ -68,8 +64,7 @@
     top_text_label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
     top_text_label.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1/1.0];
     [self.view addSubview:top_text_label];
-
-
+    
     UITableView *view = [UITableView new];
     self.myTableView = view;
     view.dataSource = self;
@@ -78,24 +73,9 @@
     view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
     
-    NSDictionary *dic = @{@"studentID": @"javk",
-                          @"studentName": @"name",
-                          @"studentAddress":@"address",
-                          @"imageURL":@"url00000"
-    };
-    
-    Student *sut = [[Student alloc] initWithDictionary:dic];
+    // 让tableView进入编辑状态
+    [self.myTableView setEditing:YES animated:NO];
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -106,7 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     static NSString *cellID = @"cellID";
     MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (nil == cell) {
@@ -115,39 +95,29 @@
     [cell config:self.myArrayData[indexPath.row]];
     //cell 选中时无效果
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
     //    cell.accessoryType = UITableViewCellAccessoryNone;//cell没有任何的样式
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;//cell的右边有一个小箭头，距离右边有十几像素；
     //    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;//cell右边有一个蓝色的圆形button；
     //    cell.accessoryType = UITableViewCellAccessoryCheckmark;//cell右边的形状是对号；
-
     return cell;
 }
-
-
-
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 207; // 设置cell 高度
 }
 
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
     Student *selectedStudent = [self.myArrayData objectAtIndex:[[self.myTableView indexPathForSelectedRow] row]];
-    
-    // Pass it to DetailViewController
-    
     DetailViewController *SVC = [[DetailViewController alloc]init];
     [SVC setSelectedStudent:selectedStudent];
     [self.navigationController pushViewController:SVC animated:YES];
     // 删除cell选中后的颜色
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    
 }
+
 
 - (void)reloadStudentList
 {
@@ -164,16 +134,15 @@
             Student *sut = [[Student alloc] initWithDictionary:[candyDictionaryArray objectAtIndex:i]];
             [self.myArrayData addObject:sut];
         }
-
-        [self.myTableView reloadData];
         
+        [self.myTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败");
         NSLog(@"%@",error);
     }];
-
 }
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
