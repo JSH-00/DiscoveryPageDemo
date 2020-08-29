@@ -19,25 +19,63 @@
 @interface TableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray * myArrayData;
 @property (nonatomic, strong) NSMutableDictionary * myDictonaryData;
+@property (nonatomic, weak) UIView * topView;
+@property (nonatomic, weak) UILabel * topTextLabel;
 @property (nonatomic, strong) UITableView * myTableView;
 - (void)reloadStudentList;
 @end
 
 @implementation TableViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@">>>>>>>>viewWillAppear:%s",__func__);
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@">>>>>>>>viewDidAppear:%s",__func__);
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+   [ super viewWillDisappear:animated];
+    NSLog(@">>>>>>>>viewWillDisappear:%s",__func__);
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    NSLog(@"?>>>>>>>>>viewDidDisappear:%s",__func__);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@">>>>>>>>viewDidLoad" );
     // Do any additional setup after loading the view.
     //    MyData *my_Data = [MyData new];
     //    self.myData = [my_Data getStudentList]; // 获取
     [self reloadStudentList];
     [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent; // 更改电池栏颜色
+    
+    UIView *top_view = [[UIView alloc] init];
+    self.topView = top_view;
+    top_view.frame = CGRectMake(0, 0, 375, 64);
+    top_view.backgroundColor = [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:1/1.0];
+    [self.view addSubview:top_view];
+    
+    UILabel *top_text_label = [[UILabel alloc] init];
+    self.topTextLabel = top_text_label;
+    top_text_label.frame = CGRectMake(172, 31, 32, 22);
+    top_text_label.text = @"发现";
+    top_text_label.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    top_text_label.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1/1.0];
+    [self.view addSubview:top_text_label];
+
+
     UITableView *view = [UITableView new];
     self.myTableView = view;
     view.dataSource = self;
     view.delegate = self;
-    view.frame = CGRectMake(0 , 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-    view.backgroundColor = [UIColor redColor];
+    view.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+    view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
     
     NSDictionary *dic = @{@"studentID": @"javk",
@@ -62,7 +100,6 @@
 // 这个方法返回对应的section有多少个元素，也就是多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%ld",self.myArrayData.count);
     return [self.myArrayData count];
     
 }
@@ -76,7 +113,8 @@
         cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     [cell config:self.myArrayData[indexPath.row]];
-    NSLog(@"");
+    //cell 选中时无效果
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     //    cell.accessoryType = UITableViewCellAccessoryNone;//cell没有任何的样式
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;//cell的右边有一个小箭头，距离右边有十几像素；
@@ -91,7 +129,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 200.0; // 设置cell 高度
+    return 207; // 设置cell 高度
 }
 
 
@@ -105,6 +143,9 @@
     DetailViewController *SVC = [[DetailViewController alloc]init];
     [SVC setSelectedStudent:selectedStudent];
     [self.navigationController pushViewController:SVC animated:YES];
+    // 删除cell选中后的颜色
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     
 }
 
@@ -114,7 +155,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"]; //指定接收信号为image/png
-    [manager GET:@"https://zerozerorobotics.com/api/v1/showcase/no-scene.json?skip=0&take=30" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:@"https://zerozerorobotics.com/api/v1/showcase/no-scene.json?skip=0&take=5" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         NSMutableArray * candyDictionaryArray = responseObject; //返回为Array类型
         
@@ -122,14 +163,8 @@
         {
             Student *sut = [[Student alloc] initWithDictionary:[candyDictionaryArray objectAtIndex:i]];
             [self.myArrayData addObject:sut];
-            NSLog(@"%@",sut);
         }
-        //        Student *sut = [[Student alloc] initWithDictionary:[self.candyDictionaryArray objectAtIndex:0]];
-        
-        NSLog(@"%@",[self.myArrayData objectAtIndex:0]);
-        NSLog(@"self.myData:%@",self.myArrayData);
-        
-        NSLog(@"");
+
         [self.myTableView reloadData];
         
         
@@ -138,5 +173,8 @@
         NSLog(@"%@",error);
     }];
 
+}
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 @end

@@ -11,14 +11,14 @@
 
 
 @interface DetailViewController ()
-
+@property  (nonatomic, weak) UIButton *popBackBtn;
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:YES]; // 隐藏NavigateBar
+    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
     // Do any additional setup after loading the view.
     // 图片
     self.view.backgroundColor = [UIColor whiteColor];
@@ -48,6 +48,13 @@
     nameLabel.text = _stu.author;
     prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",_stu.create_time]];
     descLabel.text = [NSString stringWithFormat:@"width: %@",_stu.width];
+    
+    UIButton * back_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [back_btn setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:back_btn];
+    [back_btn setTitle:@"Back" forState:UIControlStateNormal];
+    [back_btn addTarget:self action:@selector(backVc) forControlEvents:UIControlEventTouchUpInside];
+    [back_btn setFrame:CGRectMake(20, 20, 100, 50)];
 
 }
 
@@ -65,4 +72,8 @@
 
 }
 
+- (void)backVc
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end
