@@ -22,7 +22,7 @@
 @property (nonatomic, weak) UIView * topView;
 @property (nonatomic, weak) UILabel * topTextLabel;
 @property (nonatomic, strong) UITableView * myTableView;
-@property (nonatomic, weak) UIButton * editor;
+@property (nonatomic, weak) UIButton * editorBtn;
 
 - (void)reloadStudentList;
 @end
@@ -67,6 +67,14 @@
     top_text_label.textColor = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1/1.0];
     [self.view addSubview:top_text_label];
     
+    UIButton *editor_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.editorBtn = editor_btn;
+    [self.view  addSubview:editor_btn];
+    [editor_btn addTarget:self action:@selector(editorButton) forControlEvents:UIControlEventTouchUpInside];
+    editor_btn.frame = CGRectMake(300, 31, 50 ,22);
+    [editor_btn setTitle:@"编辑" forState:UIControlStateNormal];
+    editor_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+
     UITableView *view = [UITableView new];
     self.myTableView = view;
     view.dataSource = self;
@@ -75,8 +83,8 @@
     view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
     
-//    // 让tableView进入编辑状态
-//    [self.myTableView setEditing:YES animated:NO];
+    // 让tableView进入编辑状态
+    [self.myTableView setEditing:YES animated:NO];
 }
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
@@ -166,7 +174,7 @@
 // 删除按钮改为中文
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-          return @"删除";
+    return @"删除";
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -184,6 +192,22 @@
     }
 }
 
+- (void)editorButton
+{
+    if ([self.myTableView isEditing])
+    {
+        [self.editorBtn setTitle:@"编辑" forState:UIControlStateNormal];
+        [self.myTableView setEditing:NO animated:NO];
+    }
+    else
+    {
+        [self.editorBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [self.myTableView setEditing:YES animated:NO];
+        
+    }
+    
+    
+}
 //// 提交删除操作
 //-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 //{
