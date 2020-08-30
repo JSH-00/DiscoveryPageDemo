@@ -22,6 +22,8 @@
 @property (nonatomic, weak) UIView * topView;
 @property (nonatomic, weak) UILabel * topTextLabel;
 @property (nonatomic, strong) UITableView * myTableView;
+@property (nonatomic, weak) UIButton * editor;
+
 - (void)reloadStudentList;
 @end
 
@@ -73,8 +75,8 @@
     view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
     
-    // 让tableView进入编辑状态
-    [self.myTableView setEditing:YES animated:NO];
+//    // 让tableView进入编辑状态
+//    [self.myTableView setEditing:YES animated:NO];
 }
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
@@ -146,4 +148,51 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+
+#pragma mark - 右滑删除操作
+// 判断某行是否可删除
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+// 返回删除模式
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 删除
+    return UITableViewCellEditingStyleDelete;
+}
+
+// 删除按钮改为中文
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+          return @"删除";
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        [self.myArrayData removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    else
+    {
+        [self.myArrayData addObject:@100];
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.myArrayData.count - 1 inSection:0];
+        [tableView insertRowsAtIndexPaths:@[newIndexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+//// 提交删除操作
+//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//        //只要实现这个方法，就实现了默认滑动删除！！！！！
+//        if (editingStyle == UITableViewCellEditingStyleDelete)
+//        {
+//            // 删除数据
+//            [self _deleteSelectIndexPath:indexPath];
+//            [self.myTableView deleteSections:indexPath withRowAnimation:(UITableViewRowAnimationLeft)];
+//        }
+//}
 @end
