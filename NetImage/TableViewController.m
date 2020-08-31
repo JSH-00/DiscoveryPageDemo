@@ -23,6 +23,10 @@
 @property (nonatomic, weak) UILabel * topTextLabel;
 @property (nonatomic, strong) UITableView * myTableView;
 @property (nonatomic, weak) UIButton * editorBtn;
+@property (nonatomic, weak) UIButton * insertBtn;
+@property (nonatomic, assign)BOOL isDeleteStyle;
+@property (nonatomic, assign)BOOL isInsertStyle;
+
 
 - (void)reloadStudentList;
 @end
@@ -69,11 +73,21 @@
     
     UIButton *editor_btn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.editorBtn = editor_btn;
+    self.isDeleteStyle = NO;
     [self.view  addSubview:editor_btn];
     [editor_btn addTarget:self action:@selector(editorButton) forControlEvents:UIControlEventTouchUpInside];
     editor_btn.frame = CGRectMake(300, 31, 50 ,22);
-    [editor_btn setTitle:@"编辑" forState:UIControlStateNormal];
+    [editor_btn setTitle:@"删除" forState:UIControlStateNormal];
     editor_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    
+    UIButton *insert_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.insertBtn = insert_btn;
+    self.isInsertStyle = NO;
+    [self.view  addSubview:insert_btn];
+    [insert_btn addTarget:self action:@selector(insertViewBtn) forControlEvents:UIControlEventTouchUpInside];
+    insert_btn.frame = CGRectMake(240, 31, 50 ,22);
+    [insert_btn setTitle:@"插入" forState:UIControlStateNormal];
+    insert_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
 
     UITableView *view = [UITableView new];
     self.myTableView = view;
@@ -84,7 +98,7 @@
     [self.view addSubview:view];
     
     // 让tableView进入编辑状态
-    [self.myTableView setEditing:YES animated:NO];
+//    [self.myTableView setEditing:YES animated:NO];
 }
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
@@ -164,11 +178,30 @@
     return YES;
 }
 
-// 返回删除模式
+// 返回删除模式icon
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // 删除
-    return UITableViewCellEditingStyleDelete;
+
+//    if (self.isInsertStyle) {
+//        return UITableViewCellEditingStyleInsert;
+//    }
+//    else if (self.isDeleteStyle)
+//    {
+//        return UITableViewCellEditingStyleDelete;
+//    }else return nil;
+    
+    
+    if([self.myTableView isEditing])
+    {
+//        return UITableViewCellEditingStyleInsert;
+        if (self.isInsertStyle) {
+            return UITableViewCellEditingStyleInsert;
+        }
+        if(self.isDeleteStyle)
+            return UITableViewCellEditingStyleDelete;
+    }
+    return 0;
+ 
 }
 
 // 删除按钮改为中文
@@ -182,7 +215,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         [self.myArrayData removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+        [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationRight];
     }
     else
     {
@@ -190,33 +223,53 @@
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.myArrayData.count - 1 inSection:0];
         [tableView insertRowsAtIndexPaths:@[newIndexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
     }
+    
+    /** 点击 +号 图标的操作. */
+    if (editingStyle == UITableViewCellEditingStyleInsert) { /**< 判断编辑状态是插入时. */
+        /** 1. 更新数据源:向数组中添加数据. */
+        [self.myArrayData insertObject:[self.myArrayData objectAtIndex:3] atIndex:indexPath.row];
+        
+        /** 2. TableView中插入一个cell. */
+        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    }
 }
 
 - (void)editorButton
 {
-    if ([self.myTableView isEditing])
+    if (self.isDeleteStyle)
     {
-        [self.editorBtn setTitle:@"编辑" forState:UIControlStateNormal];
+        [self.editorBtn setTitle:@"删除" forState:UIControlStateNormal];
+        self.isDeleteStyle = NO;
         [self.myTableView setEditing:NO animated:NO];
+
     }
     else
     {
         [self.editorBtn setTitle:@"取消" forState:UIControlStateNormal];
-        [self.myTableView setEditing:YES animated:NO];
         
+        self.isDeleteStyle = YES; // 是否为删除/插入模式icon
+        [self.myTableView setEditing:YES animated:NO];
     }
-    
-    
 }
-//// 提交删除操作
-//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//        //只要实现这个方法，就实现了默认滑动删除！！！！！
-//        if (editingStyle == UITableViewCellEditingStyleDelete)
-//        {
-//            // 删除数据
-//            [self _deleteSelectIndexPath:indexPath];
-//            [self.myTableView deleteSections:indexPath withRowAnimation:(UITableViewRowAnimationLeft)];
-//        }
-//}
+
+- (void)insertViewBtn
+{
+    if (self.isInsertStyle)
+    {
+        [self.insertBtn setTitle:@"插入" forState:UIControlStateNormal];
+        self.isInsertStyle = NO;
+        [self.myTableView setEditing:NO animated:NO];
+
+
+    }
+    else
+    {
+        [self.insertBtn setTitle:@"取消" forState:UIControlStateNormal];
+        self.isInsertStyle = YES; // 是否为删除/插入模式icon
+        [self.myTableView setEditing:YES animated:NO];
+
+    }
+}
+
 @end
