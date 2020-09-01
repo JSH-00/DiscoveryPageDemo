@@ -27,7 +27,6 @@
 @property (nonatomic, assign)BOOL isDeleteStyle;
 @property (nonatomic, assign)BOOL isInsertStyle;
 
-
 - (void)reloadStudentList;
 @end
 
@@ -55,7 +54,7 @@
     [super viewDidLoad];
     NSLog(@">>>>>>>>viewDidLoad" );
     [self reloadStudentList];
-    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar\
+    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
     
     UIView *top_view = [[UIView alloc] init];
     self.topView = top_view;
@@ -96,16 +95,12 @@
     view.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
-    
-    // 让tableView进入编辑状态
-//    [self.myTableView setEditing:YES animated:NO];
 }
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.myArrayData count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,7 +112,7 @@
         cell = [[MyTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     [cell config:self.myArrayData[indexPath.row]];
-    //cell 选中时无效果
+    // cell 选中时无效果
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //    cell.accessoryType = UITableViewCellAccessoryNone;//cell没有任何的样式
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;//cell的右边有一个小箭头，距离右边有十几像素；
@@ -181,19 +176,8 @@
 // 返回删除模式icon
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-//    if (self.isInsertStyle) {
-//        return UITableViewCellEditingStyleInsert;
-//    }
-//    else if (self.isDeleteStyle)
-//    {
-//        return UITableViewCellEditingStyleDelete;
-//    }else return nil;
-    
-    
     if([self.myTableView isEditing])
     {
-//        return UITableViewCellEditingStyleInsert;
         if (self.isInsertStyle) {
             return UITableViewCellEditingStyleInsert;
         }
@@ -201,7 +185,6 @@
             return UITableViewCellEditingStyleDelete;
     }
     return 0;
- 
 }
 
 // 删除按钮改为中文
@@ -217,21 +200,14 @@
         [self.myArrayData removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath]withRowAnimation:UITableViewRowAnimationRight];
     }
-    else
-    {
-        [self.myArrayData addObject:@100];
-        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.myArrayData.count - 1 inSection:0];
-        [tableView insertRowsAtIndexPaths:@[newIndexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
     
     /** 点击 +号 图标的操作. */
-    if (editingStyle == UITableViewCellEditingStyleInsert) { /**< 判断编辑状态是插入时. */
+    else if (editingStyle == UITableViewCellEditingStyleInsert) { /**< 判断编辑状态是插入时. */
         /** 1. 更新数据源:向数组中添加数据. */
         [self.myArrayData insertObject:[self.myArrayData objectAtIndex:3] atIndex:indexPath.row];
         
         /** 2. TableView中插入一个cell. */
         [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-        
     }
 }
 
@@ -247,7 +223,6 @@
     else
     {
         [self.editorBtn setTitle:@"取消" forState:UIControlStateNormal];
-        
         self.isDeleteStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
     }
@@ -260,15 +235,12 @@
         [self.insertBtn setTitle:@"插入" forState:UIControlStateNormal];
         self.isInsertStyle = NO;
         [self.myTableView setEditing:NO animated:NO];
-
-
     }
     else
     {
         [self.insertBtn setTitle:@"取消" forState:UIControlStateNormal];
         self.isInsertStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
-
     }
 }
 
