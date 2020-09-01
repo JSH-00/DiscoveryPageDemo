@@ -13,19 +13,19 @@
 #import "DetailViewController.h"
 #import <AFNetworking/AFNetworking.h>
 
-
-
-
 @interface TableViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray * myArrayData;
 @property (nonatomic, strong) NSMutableDictionary * myDictonaryData;
 @property (nonatomic, weak) UIView * topView;
 @property (nonatomic, weak) UILabel * topTextLabel;
 @property (nonatomic, strong) UITableView * myTableView;
+@property (nonatomic, weak) UIButton * selectBtn;
 @property (nonatomic, weak) UIButton * editorBtn;
 @property (nonatomic, weak) UIButton * insertBtn;
+@property (nonatomic, assign)BOOL isSelectStyle;
 @property (nonatomic, assign)BOOL isDeleteStyle;
 @property (nonatomic, assign)BOOL isInsertStyle;
+@property (nonatomic, weak) UIButton * deleteSelectBtn;
 
 - (void)reloadStudentList;
 @end
@@ -61,6 +61,26 @@
     top_view.frame = CGRectMake(0, 0, 375, 64);
     top_view.backgroundColor = [UIColor colorWithRed:18/255.0 green:18/255.0 blue:18/255.0 alpha:1/1.0];
     [self.view addSubview:top_view];
+    
+    UIButton *select_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.selectBtn = select_btn;
+    self.isSelectStyle = NO;
+    [self.view  addSubview:select_btn];
+    [select_btn addTarget:self action:@selector(selectButton) forControlEvents:UIControlEventTouchUpInside];
+    select_btn.frame = CGRectMake(100, 31, 50 ,22);
+    [select_btn setTitle:@"多选" forState:UIControlStateNormal];
+    select_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    
+    UIButton *delete_select_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.deleteSelectBtn = delete_select_btn;
+    self.isSelectStyle = NO;
+    [self.view  addSubview:delete_select_btn];
+    [delete_select_btn addTarget:self action:@selector(deleteSelectButton) forControlEvents:UIControlEventTouchUpInside];
+    delete_select_btn.frame = CGRectMake(2, 31, 100 ,22);
+    [delete_select_btn setTitle:@"删除多个" forState:UIControlStateNormal];
+    delete_select_btn.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Semibold" size:16];
+    [self.deleteSelectBtn setHidden:YES];
+
     
     UILabel *top_text_label = [[UILabel alloc] init];
     self.topTextLabel = top_text_label;
@@ -113,7 +133,11 @@
     }
     [cell config:self.myArrayData[indexPath.row]];
     // cell 选中时无效果
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleBlue];
+    cell.userInteractionEnabled=YES;
+    self.myTableView.allowsSelectionDuringEditing=YES;
+    cell.tintColor = [UIColor redColor];
     //    cell.accessoryType = UITableViewCellAccessoryNone;//cell没有任何的样式
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;//cell的右边有一个小箭头，距离右边有十几像素；
     //    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;//cell右边有一个蓝色的圆形button；
@@ -129,6 +153,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 {
+    if(self.isSelectStyle) // 如果是选择模式，则不进行跳转页面操作
+    {
+        return;
+    }
     Student *selectedStudent = [self.myArrayData objectAtIndex:[[self.myTableView indexPathForSelectedRow] row]];
     DetailViewController *SVC = [[DetailViewController alloc]init];
     [SVC setSelectedStudent:selectedStudent];
@@ -136,7 +164,6 @@
     // 删除cell选中后的颜色
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
-
 
 - (void)reloadStudentList
 {
@@ -178,11 +205,18 @@
 {
     if([self.myTableView isEditing])
     {
-        if (self.isInsertStyle) {
+        if (self.isInsertStyle)
+        {
             return UITableViewCellEditingStyleInsert;
         }
         if(self.isDeleteStyle)
+        {
             return UITableViewCellEditingStyleDelete;
+        }
+        if(self.isSelectStyle)
+        {
+            return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+        }
     }
     return 0;
 }
@@ -208,6 +242,33 @@
         
         /** 2. TableView中插入一个cell. */
         [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+//    else if (editingStyle ==(UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert))
+//    {
+//        //插入数据，刷新界面
+//        NSArray *deleteArr =[self.myTableView indexPathsForSelectedRows];
+//        NSLog(@"%@",deleteArr);
+//
+//    }
+}
+
+- (void)selectButton
+{
+    if (self.isSelectStyle)
+    {
+        [self.selectBtn setTitle:@"多选" forState:UIControlStateNormal];
+        self.isSelectStyle = NO;
+        [self.myTableView setEditing:NO animated:NO];
+        [self.deleteSelectBtn setHidden:YES];
+
+    }
+    else
+    {
+        [self.selectBtn setTitle:@"取消" forState:UIControlStateNormal];
+        self.isSelectStyle = YES; // 是否为删除/插入模式icon
+        [self.myTableView setEditing:YES animated:NO];
+        [self.deleteSelectBtn setHidden:NO];
+
     }
 }
 
@@ -242,6 +303,17 @@
         self.isInsertStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
     }
+}
+
+- (void)deleteSelectButton
+{
+    NSMutableIndexSet *insets = [[NSMutableIndexSet alloc] init];
+    [[self.myTableView indexPathsForSelectedRows] enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [insets addIndex:obj.row];
+    }];
+    [self.myArrayData removeObjectsAtIndexes:insets];
+    [self.myTableView deleteRowsAtIndexPaths:[self.myTableView indexPathsForSelectedRows] withRowAnimation:UITableViewRowAnimationFade];
+
 }
 
 @end

@@ -79,7 +79,6 @@
 // 自定义Cell中显示数据的方法
 - (void)config:(Student *)model
 {
-    NSLog(@"%@",model);
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbnail]
                           placeholderImage:[UIImage imageNamed:@"small_one.png"]];
     self.nameLabel.text = model.author;
