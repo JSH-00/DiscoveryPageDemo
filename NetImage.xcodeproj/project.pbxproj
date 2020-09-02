@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4668302058C7CC7BC787AF72 /* Pods_NetImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1826F2040DADC2C54C9068E /* Pods_NetImage.framework */; };
+		57539EA124FFBB870016DAA9 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57539EA024FFBB870016DAA9 /* MyCollectionViewController.m */; };
+		57539EA424FFC4010016DAA9 /* MyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57539EA324FFC4010016DAA9 /* MyCollectionViewCell.m */; };
 		575C317524F4D52400922BC4 /* SDWebImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 575C317424F4D52400922BC4 /* SDWebImageViewController.m */; };
 		576E4CC124F6338E00AA3C0D /* GIF_two.gif in Resources */ = {isa = PBXBuildFile; fileRef = 576E4CC024F6338E00AA3C0D /* GIF_two.gif */; };
 		5774B17024EBCAD600808693 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5774B16F24EBCAD600808693 /* PageViewController.m */; };
@@ -49,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		065201F9E85BD31A34502A32 /* Pods-NetImageTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetImageTests.debug.xcconfig"; path = "Target Support Files/Pods-NetImageTests/Pods-NetImageTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57539E9F24FFBB870016DAA9 /* MyCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
+		57539EA024FFBB870016DAA9 /* MyCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
+		57539EA224FFC4010016DAA9 /* MyCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewCell.h; sourceTree = "<group>"; };
+		57539EA324FFC4010016DAA9 /* MyCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewCell.m; sourceTree = "<group>"; };
 		575C317324F4D52400922BC4 /* SDWebImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDWebImageViewController.h; sourceTree = "<group>"; };
 		575C317424F4D52400922BC4 /* SDWebImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDWebImageViewController.m; sourceTree = "<group>"; };
 		576E4CC024F6338E00AA3C0D /* GIF_two.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GIF_two.gif; sourceTree = "<group>"; };
@@ -186,6 +192,10 @@
 				5786928E24F3E0DE00DDB2E4 /* DetailViewController.m */,
 				575C317324F4D52400922BC4 /* SDWebImageViewController.h */,
 				575C317424F4D52400922BC4 /* SDWebImageViewController.m */,
+				57539E9F24FFBB870016DAA9 /* MyCollectionViewController.h */,
+				57539EA024FFBB870016DAA9 /* MyCollectionViewController.m */,
+				57539EA224FFC4010016DAA9 /* MyCollectionViewCell.h */,
+				57539EA324FFC4010016DAA9 /* MyCollectionViewCell.m */,
 			);
 			path = NetImage;
 			sourceTree = "<group>";
@@ -464,8 +474,10 @@
 				5786928C24F38D0500DDB2E4 /* MyTableViewCell.m in Sources */,
 				5786928024F35C6000DDB2E4 /* MyData.m in Sources */,
 				5786928F24F3E0DE00DDB2E4 /* DetailViewController.m in Sources */,
+				57539EA424FFC4010016DAA9 /* MyCollectionViewCell.m in Sources */,
 				5774B17024EBCAD600808693 /* PageViewController.m in Sources */,
 				5786927D24F35BCB00DDB2E4 /* TableViewController.m in Sources */,
+				57539EA124FFBB870016DAA9 /* MyCollectionViewController.m in Sources */,
 				5783443124E8ED500066EC6B /* main.m in Sources */,
 				5786928324F35C7200DDB2E4 /* Student.m in Sources */,
 				575C317524F4D52400922BC4 /* SDWebImageViewController.m in Sources */,

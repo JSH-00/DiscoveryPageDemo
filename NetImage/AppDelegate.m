@@ -13,6 +13,7 @@
 #import "TableViewController.h"
 #import "DetailViewController.h"
 #import "SDWebImageViewController.h"
+#import "MyCollectionViewController.h"
 
 @interface AppDelegate ()
 
@@ -35,8 +36,9 @@
     TableViewController *vc4 = [TableViewController new];
     DetailViewController *vc5 = [DetailViewController new];
     SDWebImageViewController *vc6 = [SDWebImageViewController new];
+    MyCollectionViewController *vc7 = [MyCollectionViewController new];
     
-    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc4];
+    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc7];
     
 //    UINavigationController *vc_to_pg = [[UINavigationController alloc]initWithRootViewController:vc2];
     
