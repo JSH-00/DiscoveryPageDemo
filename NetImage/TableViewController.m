@@ -260,6 +260,8 @@
         self.isSelectStyle = NO;
         [self.myTableView setEditing:NO animated:NO];
         [self.deleteSelectBtn setHidden:YES];
+        [self.editorBtn setHidden:NO];
+        [self.insertBtn setHidden:NO];
 
     }
     else
@@ -268,6 +270,8 @@
         self.isSelectStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
         [self.deleteSelectBtn setHidden:NO];
+        [self.editorBtn setHidden:YES];
+        [self.insertBtn setHidden:YES];
 
     }
 }
@@ -279,13 +283,16 @@
         [self.editorBtn setTitle:@"删除" forState:UIControlStateNormal];
         self.isDeleteStyle = NO;
         [self.myTableView setEditing:NO animated:NO];
-
+        [self.insertBtn setHidden:NO];
+        [self.selectBtn setHidden:NO];
     }
     else
     {
         [self.editorBtn setTitle:@"取消" forState:UIControlStateNormal];
         self.isDeleteStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
+        [self.insertBtn setHidden:YES];
+        [self.selectBtn setHidden:YES];
     }
 }
 
@@ -296,12 +303,16 @@
         [self.insertBtn setTitle:@"插入" forState:UIControlStateNormal];
         self.isInsertStyle = NO;
         [self.myTableView setEditing:NO animated:NO];
+        [self.selectBtn setHidden:NO];
+        [self.editorBtn setHidden:NO];
     }
     else
     {
         [self.insertBtn setTitle:@"取消" forState:UIControlStateNormal];
         self.isInsertStyle = YES; // 是否为删除/插入模式icon
         [self.myTableView setEditing:YES animated:NO];
+        [self.selectBtn setHidden:YES];
+        [self.editorBtn setHidden:YES];
     }
 }
 
@@ -309,7 +320,7 @@
 {
     NSMutableIndexSet *insets = [[NSMutableIndexSet alloc] init];
     [[self.myTableView indexPathsForSelectedRows] enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [insets addIndex:obj.row];
+        [insets addIndex:obj.row]; // 枚举方法遍历，拿到所选择的行号,存入索引中
     }];
     [self.myArrayData removeObjectsAtIndexes:insets];
     [self.myTableView deleteRowsAtIndexPaths:[self.myTableView indexPathsForSelectedRows] withRowAnimation:UITableViewRowAnimationFade];
