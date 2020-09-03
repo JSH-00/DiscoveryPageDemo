@@ -82,7 +82,8 @@
     [self.bookImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbnail]
                           placeholderImage:[UIImage imageNamed:@"small_one.png"]];
     self.nameLabel.text = model.author;
-    self.prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",model.create_time]];
+//    self.prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",model.create_time]];
+    self.prcieLabel.text = model.time_new;
     self.descLabel.text = model.type;
     self.backgroundColor = [UIColor blackColor];
 }

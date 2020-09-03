@@ -38,7 +38,7 @@
     SDWebImageViewController *vc6 = [SDWebImageViewController new];
     MyCollectionViewController *vc7 = [MyCollectionViewController new];
     
-    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc7];
+    UINavigationController *vc1_NA = [[UINavigationController alloc] initWithRootViewController:vc4];
     
 //    UINavigationController *vc_to_pg = [[UINavigationController alloc]initWithRootViewController:vc2];
     

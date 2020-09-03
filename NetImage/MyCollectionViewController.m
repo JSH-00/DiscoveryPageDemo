@@ -8,6 +8,8 @@
 
 #import "MyCollectionViewController.h"
 #import "MyCollectionViewCell.h"
+#import "NewCollectionViewCell.h"
+
 #define fDeviceWidth ([UIScreen mainScreen].bounds.size.width)
 #define fDeviceHeight ([UIScreen mainScreen].bounds.size.height)
 static float AD_height = 50;//广告栏高度
@@ -17,8 +19,8 @@ static float AD_height = 50;//广告栏高度
 @end
 
 @implementation MyCollectionViewController
-
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier1 = @"MyCollectionViewCell";
+static NSString * const reuseIdentifier2 = @"NewCollectionViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,16 +45,26 @@ static NSString * const reuseIdentifier = @"Cell";
     return self.cellArray.count;
 }
 
-
 #pragma mark 每个UICollectionView展示的内容
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *identify = @"cell";
-    MyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
-    [cell sizeToFit];
 
-    cell.imgView.image = [UIImage imageNamed:_cellArray[indexPath.item]];
-    cell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
+     UICollectionViewCell *cell = [UICollectionViewCell new];
+// 不同的 item 显示不同的 cell
+     if (indexPath.item % 2 ) {
+         cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier1 forIndexPath:indexPath];
+         MyCollectionViewCell *newcell = (MyCollectionViewCell *)cell;
+         [cell sizeToFit];
+         newcell.imgView.image = [UIImage imageNamed:_cellArray[indexPath.item]];
+         newcell.text.text = [NSString stringWithFormat:@"Cell %ld",indexPath.item];
+     }
+     else
+     {
+         cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier2 forIndexPath:indexPath];
+         NewCollectionViewCell *newcell2 = (NewCollectionViewCell *)cell;
+         newcell2.imgView.image = [UIImage imageNamed:_cellArray[indexPath.item + 1]];
+         newcell2.text.text = [NSString stringWithFormat:@"Cell New %ld",indexPath.item];
+     }
     //按钮事件就不实现了……
     return cell;
 }
@@ -79,8 +91,10 @@ static NSString * const reuseIdentifier = @"Cell";
         //定义每个UICollectionView 的边距距
         flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 5, 5);//上左下右
 
-        //注册cell和ReusableView（相当于头部）
-        [self.collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        //注册cell和ReusableView
+        [self.collectionView registerClass:[MyCollectionViewCell class] forCellWithReuseIdentifier:@"MyCollectionViewCell"];
+        [self.collectionView registerClass:[NewCollectionViewCell class] forCellWithReuseIdentifier:@"NewCollectionViewCell"];
+
         [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ReusableView"];
 
         //设置代理
