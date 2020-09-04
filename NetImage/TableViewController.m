@@ -178,6 +178,7 @@
         for (int i = 0 ; i < candyDictionaryArray.count ; i++)
         {
             Student *sut = [[Student alloc] initWithDictionary:[candyDictionaryArray objectAtIndex:i]];
+            sut.time_new = [self formattTimeStringWith:sut.create_time];
             [self.myArrayData addObject:sut];
         }
         
@@ -327,4 +328,13 @@
 
 }
 
+//字符串转时间戳 如：2017-4-10 17:15:10
+- (NSString *)formattTimeStringWith:(NSString *)timeStamp{
+    NSLog(@"%s",__func__);
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:ss"];
+    NSTimeInterval time =[timeStamp doubleValue];
+    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time/1000.0];
+    return [formatter stringFromDate:detaildate];
+}
 @end

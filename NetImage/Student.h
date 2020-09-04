@@ -35,12 +35,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* scene;
 @property (nonatomic, strong) NSString* sort;
 @property (nonatomic, strong) NSString* time_new;
-@property (nonatomic, strong) NSDateFormatter *time_formatter;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithName:(NSString *)name;
-- (NSString *)formattTimeStringWith:(NSString *)timeStamp;
--(id)valueForUndefinedKey;
 @end
 
 NS_ASSUME_NONNULL_END
