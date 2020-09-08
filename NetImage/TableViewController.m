@@ -26,6 +26,7 @@
 @property (nonatomic, assign)BOOL isDeleteStyle;
 @property (nonatomic, assign)BOOL isInsertStyle;
 @property (nonatomic, weak) UIButton * deleteSelectBtn;
++ (instancetype)sharedInstance;
 
 - (void)reloadStudentList;
 @end
@@ -115,6 +116,47 @@
     view.frame = CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
     view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:view];
+    
+// 单例
+    TableViewController * obj1 = [TableViewController sharedInstance] ;
+    NSLog(@"obj1 = %@.", obj1) ;
+    
+    TableViewController* obj2 = [TableViewController sharedInstance] ;
+    NSLog(@"obj2 = %@.", obj2) ;
+    
+    //
+    TableViewController* obj3 = [[TableViewController alloc] init] ;
+    NSLog(@"obj3 = %@.", obj3) ;
+    
+    TableViewController* obj4 = [[TableViewController alloc] init] ;
+
+    NSLog(@"obj4 = %@.", [obj3 copy]) ;
+
+}
+
+// 单例
++ (instancetype)sharedInstance {
+    static TableViewController *shareInstance = nil;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        shareInstance = [[self alloc] init];
+    });
+    return shareInstance;
+}
+
+
++(instancetype) allocWithZone:(struct _NSZone *)zone
+{
+    return [TableViewController sharedInstance] ;
+}
+ 
+-(instancetype) copyWithZone:(struct _NSZone *)zone
+{
+    return [TableViewController sharedInstance] ;
+}
+
+- (instancetype)mutableCopyWithZone:(nullable NSZone *)zone {
+    return [TableViewController sharedInstance];
 }
 
 // 这个方法返回对应的section有多少个元素，也就是多少行
