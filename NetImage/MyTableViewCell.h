@@ -13,8 +13,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyTableViewCell : UITableViewCell
--(NSString *)getTimeStrWithString;
--(NSString *)UTCchangeDate;
 - (NSString *)transToTime;
 //@property (nonatomic, weak) UILabel * titleLable;
 //@property (nonatomic, weak) UILabel * addressLable;
@@ -29,7 +27,14 @@ NS_ASSUME_NONNULL_BEGIN
 // 描述
 @property (nonatomic, strong) UILabel *descLabel;
 
+@property (nonatomic, strong) NSString *imageType;
 // 显示数据
+
+// 分享按钮
+@property (nonatomic, weak) UIButton *shareButton;
+
+// HoverImage
+@property (nonatomic, weak) UIImageView *hoverImage;
 - (void)config:(Student *)model;
 @end
 

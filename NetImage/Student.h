@@ -34,11 +34,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString* height;
 @property (nonatomic, strong) NSString* scene;
 @property (nonatomic, strong) NSString* sort;
-
+@property (nonatomic, strong) NSString* time_new;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 - (instancetype)initWithName:(NSString *)name;
--(id)valueForUndefinedKey;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -18,7 +18,6 @@
     return self;
 }
 
-
 - (instancetype)initWithName:(NSString *)name
 {
     self = [super init];
@@ -28,9 +27,4 @@
     return self;
 }
 
--(id)valueForUndefinedKey:(NSString *)key{
-
-    return nil;
-
-}
 @end

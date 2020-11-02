@@ -11,14 +11,14 @@
 
 
 @interface DetailViewController ()
-
+@property  (nonatomic, weak) UIButton *popBackBtn;
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:YES]; // 隐藏NavigateBar
+    [self.navigationController setNavigationBarHidden:YES animated:YES]; // 隐藏NavigateBar
     // Do any additional setup after loading the view.
     // 图片
     self.view.backgroundColor = [UIColor whiteColor];
@@ -44,10 +44,15 @@
     descLabel.lineBreakMode = NSLineBreakByWordWrapping;
     [bookImageView sd_setImageWithURL:[NSURL URLWithString:_stu.thumbnail]
                             placeholderImage:[UIImage imageNamed:@"small_two.png"]];
-//    bookImageView.image = _stu.studentImage;
     nameLabel.text = _stu.author;
-    prcieLabel.text = [self transToTime:[NSString stringWithFormat:@"%@",_stu.create_time]];
+    prcieLabel.text = _stu.time_new;
     descLabel.text = [NSString stringWithFormat:@"width: %@",_stu.width];
+    UIButton * back_btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [back_btn setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:back_btn];
+    [back_btn setTitle:@"Back" forState:UIControlStateNormal];
+    [back_btn addTarget:self action:@selector(backVc) forControlEvents:UIControlEventTouchUpInside];
+    [back_btn setFrame:CGRectMake(20, 20, 100, 50)];
 
 }
 
@@ -55,14 +60,8 @@
     _stu = student;
 }
 
-//字符串转时间戳 如：2017-4-10 17:15:10
-- (NSString *)transToTime:(NSString *)timeStamp{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy-MM-dd HH:ss"];
-    NSTimeInterval time =[timeStamp doubleValue];
-    NSDate*detaildate=[NSDate dateWithTimeIntervalSince1970:time/1000.0];
-    return [formatter stringFromDate:detaildate];
-
+- (void)backVc
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
-
 @end
